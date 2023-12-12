@@ -1,0 +1,53 @@
+PODS:
+  - Alamofire (5.8.1)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
+  - CHTCollectionViewWaterfallLayout (0.9.10):
+    - CHTCollectionViewWaterfallLayout/Swift (= 0.9.10)
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.10)
+  - FittedSheets (2.6.1)
+  - PaginatedTableView (1.0.1)
+  - SDDownloadManager (1.1.0)
+  - SDWebImage (5.18.6):
+    - SDWebImage/Core (= 5.18.6)
+  - SDWebImage/Core (5.18.6)
+  - SoftButton (0.1.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage (~> 4.1)
+  - CHTCollectionViewWaterfallLayout
+  - FittedSheets
+  - PaginatedTableView
+  - SDDownloadManager
+  - SDWebImage
+  - SoftButton
+  - Toast-Swift (~> 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - CHTCollectionViewWaterfallLayout
+    - FittedSheets
+    - PaginatedTableView
+    - SDDownloadManager
+    - SDWebImage
+    - SoftButton
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  CHTCollectionViewWaterfallLayout: b989a459788d7657ac010e03bc0f7eedca95a420
+  FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
+  PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
+  SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
+  SDWebImage: 3d8caa2430f3d674dbb3e515df4a100a2105af5f
+  SoftButton: 047bf63ec0c6b6c6a19c02a6f9e5ee4c79d853f3
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: dd6f8be7ddff89925bc79168ad5cd7f81690a134
+
+COCOAPODS: 1.13.0
