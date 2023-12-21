@@ -17,12 +17,11 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         imgView.makeRounded()
+        imgView.contentMode = .scaleAspectFill
+        
     }
     func setimages(item :HomeImage,isFile :Bool){
-        let height = item.height! / 120
-        let width = item.width! / 120
-        let hash = item.blur_hash ?? blur_hash
-        let size = CGSize(width: CGFloat(width), height: CGFloat(height))
+        
         imgView.sd_setImage(with: URL(string: item.urls?.small ?? "Defult URL"))
     }
     
@@ -36,7 +35,7 @@ class SearchCollectionView: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-  
+    
     
 }
 
@@ -44,5 +43,27 @@ extension UIImageView {
     func makeRounded() {
         self.layer.cornerRadius = 6.0
         self.clipsToBounds = true
+    }
+}
+class CollectionlistViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imgView.layer.cornerRadius = 20
+        imgView.layer.masksToBounds = true
+    }
+    
+    func setimages(item :Result,isFile :Bool){
+        
+        imgView.sd_setImage(with: URL(string: item.coverPhoto.urls.thumb ?? "Defult URL"))
+    }
+}
+
+class ItemCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imgView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }

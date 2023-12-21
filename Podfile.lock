@@ -8,11 +8,12 @@ PODS:
   - FittedSheets (2.6.1)
   - PaginatedTableView (1.0.1)
   - SDDownloadManager (1.1.0)
-  - SDWebImage (5.18.6):
-    - SDWebImage/Core (= 5.18.6)
-  - SDWebImage/Core (5.18.6)
+  - SDWebImage (5.18.7):
+    - SDWebImage/Core (= 5.18.7)
+  - SDWebImage/Core (5.18.7)
   - SoftButton (0.1.0)
   - Toast-Swift (5.0.1)
+  - TOCropViewController (2.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - SDWebImage
   - SoftButton
   - Toast-Swift (~> 5.0.1)
+  - TOCropViewController
 
 SPEC REPOS:
   trunk:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - SDWebImage
     - SoftButton
     - Toast-Swift
+    - TOCropViewController
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
@@ -44,10 +47,11 @@ SPEC CHECKSUMS:
   FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
   PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
   SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
-  SDWebImage: 3d8caa2430f3d674dbb3e515df4a100a2105af5f
+  SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
   SoftButton: 047bf63ec0c6b6c6a19c02a6f9e5ee4c79d853f3
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
-PODFILE CHECKSUM: dd6f8be7ddff89925bc79168ad5cd7f81690a134
+PODFILE CHECKSUM: 2c5523a0ca01c0916f2d677f39d50175ad863c30
 
 COCOAPODS: 1.13.0

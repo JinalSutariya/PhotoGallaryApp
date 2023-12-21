@@ -16,9 +16,11 @@ enum OrderingCriteria {
 }
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
     
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionBtn: SoftButton!
     
+    @IBOutlet weak var cottomView: UIView!
     @IBOutlet weak var moreBtn: SoftButton!
     @IBOutlet weak var searchBtn: SoftButton!
     @IBOutlet weak var randomBtn: SoftButton!
@@ -33,7 +35,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // getSearchPhotos()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        
+        cottomView.layer.masksToBounds = true;
+        cottomView.backgroundColor = UIColor.white
+        cottomView.layer.shadowColor = UIColor.lightGray.cgColor
+        cottomView.layer.shadowOpacity = 0.8
+        cottomView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        cottomView.layer.shadowRadius = 6.0
+        cottomView.layer.masksToBounds = false
+        cottomView.layer.cornerRadius = 30
+        cottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        outerView.layer.cornerRadius = 30
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -48,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         moreBtn.makeNeuromorphic(cornerRadius: moreBtn.bounds.height/2, superView: self.view)
         
     }
-   
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(self.collectionView.contentOffset.y >= (self.collectionView.contentSize.height - self.collectionView.bounds.size.height)) {
             if !isPageRefreshing {
@@ -86,10 +101,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func collectionTap(_ sender: Any) {
-        currentOrdering = .latest
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "collectionlist") as! CollectionListVC
+        self.navigationController?.pushViewController(secondViewController, animated: true)
         
-        resetDataAndFetch(pageNumber: 0, orderby: "latest")
-        collectionView.reloadData()
     }
     @IBAction func populattap(_ sender: Any) {
         currentOrdering = .popular
@@ -100,7 +114,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     @IBAction func randomTap(_ sender: Any) {
         currentOrdering = .random
-        
         resetDataAndFetch(pageNumber: 0, orderby: "random")
         collectionView.reloadData()
         
@@ -118,15 +131,35 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CollectionViewCell
         let item = newPhotos[indexPath.row]
         cell.setimages(item: item,isFile:false)
+        
         return cell
     }
     
-    // MARK: List Item coustom Size
+    let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+    let numberOfItemsPerColumn: CGFloat = 3
+    let spacingBetweenCells: CGFloat = 15
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/3 - 10, height: collectionView.frame.size.width/3)
+        let totalSpacing = (2 * sectionInsets.left) + ((numberOfItemsPerColumn - 1) * spacingBetweenCells)
         
+        if let collection = self.collectionView {
+            let width = (collection.bounds.width - totalSpacing) / numberOfItemsPerColumn
+            let height = 150 // Set your desired height here
+            return CGSize(width: width, height: CGFloat(height))
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacingBetweenCells
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = newPhotos[indexPath.row]
         showImageDetailViewController(image: selectedImage)
@@ -160,8 +193,4 @@ extension ViewController {
             self.isPageRefreshing = false
         }
     }
-    
-    
-    
 }
-

@@ -18,7 +18,7 @@ struct HomeImage: Decodable {
     var likes: Int?
     var likedByUser: Bool?
     var currentUserCollections: [String]?
-    //    var sponsorship: JSONNull?
+    var sponsorship: JSONNull?
     var topicSubmissions: TopicSubmissions?
     var user: User?
     

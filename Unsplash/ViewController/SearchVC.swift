@@ -7,26 +7,35 @@
 
 import UIKit
 import Alamofire
+import SoftButton
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var backBtn: SoftButton!
     @IBOutlet weak var collectionview: UICollectionView!
-    @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var searchTxt: UITextField!
+    
     var images: [UnsplashPhoto] = []
     var pageNumber : Int = 0
     var isPageRefreshing : Bool = false
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         collectionview.delegate = self
         collectionview.dataSource = self
         collectionview.collectionViewLayout = UICollectionViewFlowLayout();
+        backBtn.makeNeuromorphic(cornerRadius: backBtn.bounds.height/2, superView: self.view)
         
         searchTxt.delegate = self // Set the UITextFieldDelegate
         
-        searchImages(page: pageNumber)
+        //  searchImages(page: pageNumber)
+        
+    }
+    @IBAction func backtap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
         
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -34,7 +43,7 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
             if !isPageRefreshing {
                 isPageRefreshing = true
                 pageNumber = pageNumber + 1
-                searchImages(page: pageNumber)
+                //      searchImages(page: pageNumber)
             }
         }
     }
@@ -43,28 +52,28 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         pageNumber = 1
-        searchImages(page: pageNumber)
+        //   searchImages(page: pageNumber)
         return true
     }
     
-    func searchImages(page: Int) {
-        guard let query = searchTxt.text, !query.isEmpty else {
-            print("Empty query, not performing search.")
-            return
-        }
-        
-        UnsplashAPI.searchImages(query: searchTxt.text!, page: 1) { result in
-                    switch result {
-                    case .success(let photos):
-                        self.images = photos
-                        DispatchQueue.main.async {
-                            self.collectionview.reloadData()
-                        }
-                    case .failure(let error):
-                        print("Error fetching data: \(error)")
-                    }
-                }
-    }
+    /*  func searchImages(page: Int) {
+     guard let query = searchTxt.text, !query.isEmpty else {
+     print("Empty query, not performing search.")
+     return
+     }
+     
+     UnsplashAPI.searchImages(query: searchTxt.text!, page: 1) { result in
+     switch result {
+     case .success(let photos):
+     self.images = photos
+     DispatchQueue.main.async {
+     self.collectionview.reloadData()
+     }
+     case .failure(let error):
+     print("Error fetching data: \(error)")
+     }
+     }
+     }*/
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -72,9 +81,9 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! SearchCollectionView
         let imageUrlString = images[indexPath.item].urls.regular
-               if let imageUrl = URL(string: imageUrlString) {
-                   cell.imgView.load(url: imageUrl)
-               }
+        if let imageUrl = URL(string: imageUrlString) {
+            cell.imgView.load(url: imageUrl)
+        }
         return cell
     }
     

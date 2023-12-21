@@ -47,9 +47,14 @@
 		21125E122B21BF8C004A612D /* BlueLoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21125E112B21BF8C004A612D /* BlueLoder.swift */; };
 		21125E142B21BFAF004A612D /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21125E132B21BFAF004A612D /* AppConst.swift */; };
 		21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21312CC42B26FDE700F5C50A /* SearchVC.swift */; };
-		219D1AFB2B28166E004A53F6 /* UnsplashAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1AFA2B28166E004A53F6 /* UnsplashAPIClient.swift */; };
+		215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CB2B315091002FA0C9 /* ItemViewController.swift */; };
+		215687CF2B316181002FA0C9 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CE2B316181002FA0C9 /* ItemList.swift */; };
+		21866BA22B299382000B7B97 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA12B299382000B7B97 /* CollectionList.swift */; };
+		21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */; };
+		219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1AFA2B28166E004A53F6 /* APIManager.swift */; };
 		219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1B002B282145004A53F6 /* ImageViewController.swift */; };
 		21B300142B22DE03005168FF /* SearchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B300132B22DE03005168FF /* SearchImage.swift */; };
+		21B3F6892B32C6C100907A57 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3F6882B32C6C100907A57 /* File.swift */; };
 		21C1D6582B20499F0022A120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6572B20499F0022A120 /* AppDelegate.swift */; };
 		21C1D65A2B20499F0022A120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6592B20499F0022A120 /* SceneDelegate.swift */; };
 		21C1D65C2B20499F0022A120 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D65B2B20499F0022A120 /* ViewController.swift */; };
@@ -102,9 +107,14 @@
 		21125E112B21BF8C004A612D /* BlueLoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLoder.swift; sourceTree = "<group>"; };
 		21125E132B21BFAF004A612D /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
 		21312CC42B26FDE700F5C50A /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		219D1AFA2B28166E004A53F6 /* UnsplashAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIClient.swift; sourceTree = "<group>"; };
+		215687CB2B315091002FA0C9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		215687CE2B316181002FA0C9 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		21866BA12B299382000B7B97 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListVC.swift; sourceTree = "<group>"; };
+		219D1AFA2B28166E004A53F6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		219D1B002B282145004A53F6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		21B300132B22DE03005168FF /* SearchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImage.swift; sourceTree = "<group>"; };
+		21B3F6882B32C6C100907A57 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		21C1D6542B20499F0022A120 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C1D6572B20499F0022A120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C1D6592B20499F0022A120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,7 +189,7 @@
 		219D1AF92B281658004A53F6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				219D1AFA2B28166E004A53F6 /* UnsplashAPIClient.swift */,
+				219D1AFA2B28166E004A53F6 /* APIManager.swift */,
 				21125E132B21BFAF004A612D /* AppConst.swift */,
 				21125E112B21BF8C004A612D /* BlueLoder.swift */,
 			);
@@ -193,6 +203,9 @@
 				21312CC42B26FDE700F5C50A /* SearchVC.swift */,
 				21125DF12B2193D1004A612D /* OnboardingVC.swift */,
 				219D1B002B282145004A53F6 /* ImageViewController.swift */,
+				21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */,
+				215687CB2B315091002FA0C9 /* ItemViewController.swift */,
+				21B3F6882B32C6C100907A57 /* File.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 			children = (
 				21B300132B22DE03005168FF /* SearchImage.swift */,
 				21C1D6892B204B400022A120 /* HomePageImage.swift */,
+				21866BA12B299382000B7B97 /* CollectionList.swift */,
+				215687CE2B316181002FA0C9 /* ItemList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,13 +586,18 @@
 			files = (
 				21125E142B21BFAF004A612D /* AppConst.swift in Sources */,
 				21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */,
+				215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */,
 				21125E122B21BF8C004A612D /* BlueLoder.swift in Sources */,
+				215687CF2B316181002FA0C9 /* ItemList.swift in Sources */,
+				21866BA22B299382000B7B97 /* CollectionList.swift in Sources */,
 				21B300142B22DE03005168FF /* SearchImage.swift in Sources */,
-				219D1AFB2B28166E004A53F6 /* UnsplashAPIClient.swift in Sources */,
+				219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */,
 				21125DF22B2193D1004A612D /* OnboardingVC.swift in Sources */,
 				21C1D68C2B206C280022A120 /* CollectionViewCell.swift in Sources */,
 				21C1D68A2B204B400022A120 /* HomePageImage.swift in Sources */,
+				21B3F6892B32C6C100907A57 /* File.swift in Sources */,
 				21C1D65C2B20499F0022A120 /* ViewController.swift in Sources */,
+				21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */,
 				21C1D6582B20499F0022A120 /* AppDelegate.swift in Sources */,
 				219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */,
 				21C1D65A2B20499F0022A120 /* SceneDelegate.swift in Sources */,
