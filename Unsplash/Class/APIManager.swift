@@ -74,3 +74,37 @@ class ItemManager {
         }.resume()
     }
 }
+class CollectionlistManager {
+    static let shared = CollectionlistManager()
+    
+    private init() {}
+    
+    func fetchImages(page: Int, query: String, completion: @escaping ([Result]?) -> Void) {
+        let clientId = "a82f6bf78409bb9e7f0921a410d9d693d06b98a2d5df9a9cdc8295ab3cb261c1"
+        
+        guard let url = URL(string: "https://api.unsplash.com/search/collections/?client_id=\(clientId)&query=\(query)&page=\(page)&per_page=20") else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let collectionList = try decoder.decode(CollectionList.self, from: data)
+                completion(collectionList.results)
+             //   print(collectionList)
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
+}

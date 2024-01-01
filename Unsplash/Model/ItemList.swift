@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ItemListDatum
-struct ItemListDatum: Codable {
+struct ItemListDatum: Decodable {
     let id, slug: String
     let createdAt, updatedAt: Date
     let promotedAt: Date?
@@ -23,7 +23,7 @@ struct ItemListDatum: Codable {
     let likedByUser: Bool
     let currentUserCollections: [JJSONAny]
     let sponsorship: JJSONNull?
-    let topicSubmissions: TTopicSubmissions
+    let topicSubmissions: TopicSubmissionss
     let user: UUser
 
     enum CodingKeys: String, CodingKey {
@@ -63,7 +63,7 @@ struct ItemListDatumLinks: Codable {
 }
 
 // MARK: - TopicSubmissions
-struct TTopicSubmissions: Codable {
+struct TopicSubmissionss: Decodable {
     let architectureInterior, businessWork, spirituality, interiors: ArchitectureInterior?
     let texturesPatterns: ArchitectureInterior?
     let wallpapers: Wallpapers?
@@ -79,7 +79,7 @@ struct TTopicSubmissions: Codable {
 }
 
 // MARK: - ArchitectureInterior
-struct AArchitectureInterior: Codable {
+struct ArchitectureInterior: Decodable {
     let status: Status
     let approvedOn: Date?
 
@@ -95,7 +95,7 @@ enum SStatus: String, Codable {
 }
 
 // MARK: - Wallpapers
-struct Wallpapers: Codable {
+struct Wallpapers: Decodable {
     let status: Status
 }
 
@@ -148,7 +148,7 @@ struct UUser: Codable {
 
 // MARK: - UserLinks
 struct UUserLinks: Codable {
-    let linksSelf, html, photos, likes: String
+    let linksSelf, html, photos, likes: String?
     let portfolio, following, followers: String
 
     enum CodingKeys: String, CodingKey {

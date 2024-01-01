@@ -7,6 +7,7 @@ PODS:
   - CHTCollectionViewWaterfallLayout/Swift (0.9.10)
   - FittedSheets (2.6.1)
   - PaginatedTableView (1.0.1)
+  - QCropper (0.1.7)
   - SDDownloadManager (1.1.0)
   - SDWebImage (5.18.7):
     - SDWebImage/Core (= 5.18.7)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - FittedSheets
   - PaginatedTableView
+  - QCropper
   - SDDownloadManager
   - SDWebImage
   - SoftButton
@@ -34,6 +36,7 @@ SPEC REPOS:
     - CHTCollectionViewWaterfallLayout
     - FittedSheets
     - PaginatedTableView
+    - QCropper
     - SDDownloadManager
     - SDWebImage
     - SoftButton
@@ -46,12 +49,13 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: b989a459788d7657ac010e03bc0f7eedca95a420
   FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
   PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
+  QCropper: aef6bad1e683e62b501fb8258359ccd10c68b4f2
   SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
   SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
   SoftButton: 047bf63ec0c6b6c6a19c02a6f9e5ee4c79d853f3
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
-PODFILE CHECKSUM: 2c5523a0ca01c0916f2d677f39d50175ad863c30
+PODFILE CHECKSUM: 08a33e4302c50806b33ffe59e29bd7edf4b22726
 
 COCOAPODS: 1.13.0

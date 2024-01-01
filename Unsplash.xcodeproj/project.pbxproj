@@ -51,6 +51,8 @@
 		215687CF2B316181002FA0C9 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CE2B316181002FA0C9 /* ItemList.swift */; };
 		21866BA22B299382000B7B97 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA12B299382000B7B97 /* CollectionList.swift */; };
 		21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */; };
+		218B46322B42B6A20001E367 /* CropperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B46312B42B6A20001E367 /* CropperVC.swift */; };
+		218B46342B42B6D10001E367 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B46332B42B6D10001E367 /* CustomOverlay.swift */; };
 		219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1AFA2B28166E004A53F6 /* APIManager.swift */; };
 		219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1B002B282145004A53F6 /* ImageViewController.swift */; };
 		21B300142B22DE03005168FF /* SearchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B300132B22DE03005168FF /* SearchImage.swift */; };
@@ -111,6 +113,8 @@
 		215687CE2B316181002FA0C9 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		21866BA12B299382000B7B97 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListVC.swift; sourceTree = "<group>"; };
+		218B46312B42B6A20001E367 /* CropperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropperVC.swift; sourceTree = "<group>"; };
+		218B46332B42B6D10001E367 /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 		219D1AFA2B28166E004A53F6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		219D1B002B282145004A53F6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		21B300132B22DE03005168FF /* SearchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImage.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				219D1AFA2B28166E004A53F6 /* APIManager.swift */,
 				21125E132B21BFAF004A612D /* AppConst.swift */,
 				21125E112B21BF8C004A612D /* BlueLoder.swift */,
+				218B46332B42B6D10001E367 /* CustomOverlay.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */,
 				215687CB2B315091002FA0C9 /* ItemViewController.swift */,
 				21B3F6882B32C6C100907A57 /* File.swift */,
+				218B46312B42B6A20001E367 /* CropperVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -588,6 +594,8 @@
 				21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */,
 				215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */,
 				21125E122B21BF8C004A612D /* BlueLoder.swift in Sources */,
+				218B46322B42B6A20001E367 /* CropperVC.swift in Sources */,
+				218B46342B42B6D10001E367 /* CustomOverlay.swift in Sources */,
 				215687CF2B316181002FA0C9 /* ItemList.swift in Sources */,
 				21866BA22B299382000B7B97 /* CollectionList.swift in Sources */,
 				21B300142B22DE03005168FF /* SearchImage.swift in Sources */,

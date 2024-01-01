@@ -29,9 +29,9 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
         collectionview.collectionViewLayout = UICollectionViewFlowLayout();
         backBtn.makeNeuromorphic(cornerRadius: backBtn.bounds.height/2, superView: self.view)
         
-        searchTxt.delegate = self // Set the UITextFieldDelegate
+        searchTxt.delegate = self
         
-        //  searchImages(page: pageNumber)
+        searchImages(page: pageNumber)
         
     }
     @IBAction func backtap(_ sender: Any) {
@@ -43,7 +43,7 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
             if !isPageRefreshing {
                 isPageRefreshing = true
                 pageNumber = pageNumber + 1
-                //      searchImages(page: pageNumber)
+                searchImages(page: pageNumber)
             }
         }
     }
@@ -52,28 +52,50 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         pageNumber = 1
-        //   searchImages(page: pageNumber)
+        searchImages(page: pageNumber)
         return true
     }
-    
-    /*  func searchImages(page: Int) {
-     guard let query = searchTxt.text, !query.isEmpty else {
-     print("Empty query, not performing search.")
-     return
-     }
-     
-     UnsplashAPI.searchImages(query: searchTxt.text!, page: 1) { result in
-     switch result {
-     case .success(let photos):
-     self.images = photos
-     DispatchQueue.main.async {
-     self.collectionview.reloadData()
-     }
-     case .failure(let error):
-     print("Error fetching data: \(error)")
-     }
-     }
-     }*/
+    func searchImages(page: Int) {
+        // Replace "YOUR_ACCESS_KEY" with your Unsplash access key
+        let accessKey = "a82f6bf78409bb9e7f0921a410d9d693d06b98a2d5df9a9cdc8295ab3cb261c1"
+        
+        guard let query = searchTxt.text, !query.isEmpty else {
+            print("Empty query, not performing search.")
+            return
+        }
+        
+        let urlString = "https://api.unsplash.com/photos/?client_id=\(accessKey)&page=\(page)&order_by=\(query)&per_page=20"
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let result = try decoder.decode(UnsplashSearchResponse.self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.images = result.results
+                    self.collectionview.reloadData()
+                }
+            } catch {
+                print("Error decoding data: \(error)")
+            }
+        }.resume()
+    }
+  
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -94,7 +116,6 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     }
     
 }
-
 
 extension UIImageView {
     func load(url: URL) {

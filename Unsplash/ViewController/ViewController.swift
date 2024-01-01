@@ -182,6 +182,7 @@ extension ViewController {
         ]
         AF.request(AppConst.baseurl+AppConst.photoUrl,method: .get,parameters: parameters).validate().responseDecodable(of: [HomeImage].self) { (response) in
             guard let data = response.value else {
+                
                 self.view.removeBluerLoader()
                 self.isPageRefreshing = false
                 return

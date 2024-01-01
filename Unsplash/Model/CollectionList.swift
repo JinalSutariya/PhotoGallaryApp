@@ -8,9 +8,11 @@
 import Foundation
 // MARK: - CollectionList
 
+
+// MARK: - CollectionList
 struct CollectionList: Codable {
     let total, totalPages: Int
-    let results: [Result]
+    var results: [Result]
 
     enum CodingKeys: String, CodingKey {
         case total
@@ -21,19 +23,18 @@ struct CollectionList: Codable {
 
 // MARK: - Result
 struct Result: Codable {
-    let id: String
-    let title: Title
+    let id, title: String?
     let description: String?
-    let publishedAt, lastCollectedAt, updatedAt: Date
-    let featured: Bool
-    let totalPhotos: Int
-    let resultPrivate: Bool
-    let shareKey: String
-    let tags: [Tag]
-    let links: ResultLinks
-    let user: Userr
-    let coverPhoto: ResultCoverPhoto
-    let previewPhotos: [PreviewPhoto]
+    let publishedAt, lastCollectedAt, updatedAt: Date?
+    let featured: Bool?
+    let totalPhotos: Int?
+    let resultPrivate: Bool?
+    let shareKey: String?
+    let tags: [Tag]?
+    let links: ResultLinks?
+    let user: Userr?
+    let coverPhoto: ResultCoverPhoto?
+    let previewPhotos: [PreviewPhoto]?
 
     enum CodingKeys: String, CodingKey {
         case id, title, description
@@ -49,7 +50,6 @@ struct Result: Codable {
         case previewPhotos = "preview_photos"
     }
 }
-
 // MARK: - ResultCoverPhoto
 struct ResultCoverPhoto: Codable {
     let id, slug: String
@@ -57,9 +57,8 @@ struct ResultCoverPhoto: Codable {
     let promotedAt: Date?
     let width, height: Int
     let color, blurHash: String
-    let description: String?
-    let altDescription: String
-    let breadcrumbs: [JSONAnyy]
+    let description, altDescription: String?
+    let breadcrumbs: [Breadcrumb]
     let urls: Urlss
     let links: CoverPhotoLinks
     let likes: Int
@@ -87,6 +86,18 @@ struct ResultCoverPhoto: Codable {
     }
 }
 
+// MARK: - Breadcrumb
+struct Breadcrumb: Codable {
+    let slug, title: String
+    let index: Int
+    let type: TypeEnum
+}
+
+enum TypeEnum: String, Codable {
+    case landingPage = "landing_page"
+    case search = "search"
+}
+
 // MARK: - CoverPhotoLinks
 struct CoverPhotoLinks: Codable {
     let linksSelf, html, download, downloadLocation: String
@@ -100,28 +111,18 @@ struct CoverPhotoLinks: Codable {
 
 // MARK: - PurpleTopicSubmissions
 struct PurpleTopicSubmissions: Codable {
-    let architectureInterior, businessWork, interiors, workFromHome: ArchitectureInterior?
-    let wallpapers, texturesPatterns, sustainability, technology: ArchitectureInterior?
-    let currentEvents, backToSchool: BackToSchool?
-    let artsCulture, spirituality: ArchitectureInterior?
+    let wallpapers, texturesPatterns, nature, travel: Animals?
+    let animals: Animals?
 
     enum CodingKeys: String, CodingKey {
-        case architectureInterior = "architecture-interior"
-        case businessWork = "business-work"
-        case interiors
-        case workFromHome = "work-from-home"
         case wallpapers
         case texturesPatterns = "textures-patterns"
-        case sustainability, technology
-        case currentEvents = "current-events"
-        case backToSchool = "back-to-school"
-        case artsCulture = "arts-culture"
-        case spirituality
+        case nature, travel, animals
     }
 }
 
-// MARK: - ArchitectureInterior
-struct ArchitectureInterior: Codable {
+// MARK: - Animals
+struct Animals: Codable {
     let status: Status
     let approvedOn: Date?
 
@@ -136,11 +137,6 @@ enum Status: String, Codable {
     case rejected = "rejected"
 }
 
-// MARK: - BackToSchool
-struct BackToSchool: Codable {
-    let status: Status
-}
-
 // MARK: - Urls
 struct Urlss: Codable {
     let raw, full, regular, small: String
@@ -153,19 +149,20 @@ struct Urlss: Codable {
 }
 
 // MARK: - User
+// MARK: - User
 struct Userr: Codable {
-    let id: String
-    let updatedAt: Date
-    let username, name, firstName: String
-    let lastName, twitterUsername: String?
+    let id: String?
+    let updatedAt: Date?
+    let username, name, firstName, lastName: String?
+    let twitterUsername: String?
     let portfolioURL: String?
     let bio, location: String?
-    let links: UserLinkss
-    let profileImage: ProfileImagee
+    let links: UserLinkss?
+    let profileImage: ProfileImagee?
     let instagramUsername: String?
-    let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int
-    let acceptedTos, forHire: Bool
-    let social: Sociall
+    let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
+    let acceptedTos, forHire: Bool?
+    let social: Sociall?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -300,8 +297,8 @@ struct SourceCoverPhoto: Codable {
     let currentUserCollections: [JSONAnyy]
     let sponsorship: JSONNulll?
     let topicSubmissions: FluffyTopicSubmissions
-    let premium, plus: Bool?
     let user: Userr
+    let premium, plus: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -317,45 +314,23 @@ struct SourceCoverPhoto: Codable {
         case currentUserCollections = "current_user_collections"
         case sponsorship
         case topicSubmissions = "topic_submissions"
-        case premium, plus, user
+        case user, premium, plus
     }
-}
-
-// MARK: - Breadcrumb
-struct Breadcrumb: Codable {
-    let slug, title: String
-    let index: Int
-    let type: TypeEnum
-}
-
-enum TypeEnum: String, Codable {
-    case landingPage = "landing_page"
-    case search = "search"
 }
 
 // MARK: - FluffyTopicSubmissions
 struct FluffyTopicSubmissions: Codable {
-    let texturesPatterns, wallpapers, architectureInterior, colorOfWater: ArchitectureInterior?
-    let currentEvents, experimental, artsCulture: ArchitectureInterior?
-    let monochrome: BackToSchool?
+    let nature, wallpapers, texturesPatterns, currentEvents: Animals?
+    let animals, architectureInterior, colorOfWater: Animals?
 
     enum CodingKeys: String, CodingKey {
+        case nature, wallpapers
         case texturesPatterns = "textures-patterns"
-        case wallpapers
+        case currentEvents = "current-events"
+        case animals
         case architectureInterior = "architecture-interior"
         case colorOfWater = "color-of-water"
-        case currentEvents = "current-events"
-        case experimental
-        case artsCulture = "arts-culture"
-        case monochrome
     }
-}
-
-enum Title: String, Codable {
-    case asOffice = "AS Office"
-    case office = "Office"
-    case purpleOffice = "Office "
-    case titleOffice = "office"
 }
 
 // MARK: - Encode/decode helpers
@@ -411,7 +386,7 @@ class JSONAnyy: Codable {
 
     static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {
         let context = DecodingError.Context(codingPath: codingPath, debugDescription: "Cannot decode JSONAny")
-        return DecodingError.typeMismatch(JSONAnyy.self, context)
+        return DecodingError.typeMismatch(JSONAny.self, context)
     }
 
     static func encodingError(forValue value: Any, codingPath: [CodingKey]) -> EncodingError {

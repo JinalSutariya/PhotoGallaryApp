@@ -7,7 +7,6 @@
 
 import UIKit
 import SoftButton
-import Alamofire
 
 class ItemViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -101,6 +100,17 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacingBetweenCells
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedImage = images[indexPath.row]
+        showImageDetailViewController(image: selectedImage)
+    }
+    func showImageDetailViewController(image: ItemListDatum) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let imageDetailVC = storyboard.instantiateViewController(withIdentifier: "viewImage") as? ImageViewController {
+            imageDetailVC.selectedImagee = image
+            self.navigationController?.pushViewController(imageDetailVC, animated: true)
+        }
     }
 }
 
