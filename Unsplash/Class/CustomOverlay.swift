@@ -7,6 +7,7 @@
 
 import QCropper
 import Foundation
+
 class CustomOverlay: Overlay {
 
     lazy var borderLayer: CAShapeLayer = {

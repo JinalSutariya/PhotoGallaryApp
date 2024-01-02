@@ -16,11 +16,15 @@ enum OrderingCriteria {
 }
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionBtn: SoftButton!
     
-    @IBOutlet weak var cottomView: UIView!
+    @IBOutlet weak var saveBtn: SoftUIView!
+    @IBOutlet weak var favBtn: SoftUIView!
+    @IBOutlet weak var homeBtn: SoftUIView!
+    @IBOutlet weak var cottomView: SoftUIView!
     @IBOutlet weak var moreBtn: SoftButton!
     @IBOutlet weak var searchBtn: SoftButton!
     @IBOutlet weak var randomBtn: SoftButton!
@@ -36,24 +40,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
-        
-        cottomView.layer.masksToBounds = true;
-        cottomView.backgroundColor = UIColor.white
-        cottomView.layer.shadowColor = UIColor.lightGray.cgColor
-        cottomView.layer.shadowOpacity = 0.8
-        cottomView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cottomView.layer.shadowRadius = 6.0
-        cottomView.layer.masksToBounds = false
-        cottomView.layer.cornerRadius = 30
-        cottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        
+        setupSubtitleView()
         outerView.layer.cornerRadius = 30
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionPhotos(page: pageNumber, orderby: "latest")
+        setupForwardView()
         
+        cottomView.addSubview(stackView)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout();
         
         collectionBtn.makeNeuromorphic(cornerRadius: collectionBtn.bounds.height/2, superView: self.view)
@@ -165,7 +159,60 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         showImageDetailViewController(image: selectedImage)
     }
     
+    // MARK: - custome function
+
+
+    func setupSubtitleView() {
+        cottomView.type = .normal
+        cottomView.isSelected = true
+    }
+
+    func setupForwardView() {
+        homeBtn.type = .toggleButton
+        
+        favBtn.type = .toggleButton
+        
+        saveBtn.type = .toggleButton
+        
+        homeBtn.cornerRadius = homeBtn.frame.size.width/2
+        favBtn.cornerRadius = favBtn.frame.size.width/2
+        saveBtn.cornerRadius = saveBtn.frame.size.width/2
+
+        let icon = UIImage(named: "Home")
+        let icon2 = UIImage(named: "Favourite")
+        let icon3 = UIImage(named: "Save")
+        
+        let imageView = UIImageView(image: icon)
+        let imageView2 = UIImageView(image: icon2)
+        let imageView3 = UIImageView(image: icon3)
+
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = .darkGray
+
+        homeBtn.setContentView(imageView)
+        imageView.centerXAnchor.constraint(equalTo: homeBtn.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: homeBtn.centerYAnchor).isActive = true
+        
+        imageView2.translatesAutoresizingMaskIntoConstraints = false
+        imageView2.tintColor = .darkGray
+
+        favBtn.setContentView(imageView2)
+        imageView2.centerXAnchor.constraint(equalTo: favBtn.centerXAnchor).isActive = true
+        imageView2.centerYAnchor.constraint(equalTo: favBtn.centerYAnchor).isActive = true
+        
+        imageView3.translatesAutoresizingMaskIntoConstraints = false
+        imageView3.tintColor = .darkGray
+
+        saveBtn.setContentView(imageView3)
+        imageView3.centerXAnchor.constraint(equalTo: saveBtn.centerXAnchor).isActive = true
+        imageView3.centerYAnchor.constraint(equalTo: saveBtn.centerYAnchor).isActive = true
+    }
+
+    
 }
+
+
 
 // MARK: - Alamofire API CAll
 extension ViewController {

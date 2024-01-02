@@ -55,6 +55,7 @@
 		218B46342B42B6D10001E367 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B46332B42B6D10001E367 /* CustomOverlay.swift */; };
 		219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1AFA2B28166E004A53F6 /* APIManager.swift */; };
 		219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1B002B282145004A53F6 /* ImageViewController.swift */; };
+		219ED4732B43E21700556AF8 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED4722B43E21700556AF8 /* SoftUIView.swift */; };
 		21B300142B22DE03005168FF /* SearchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B300132B22DE03005168FF /* SearchImage.swift */; };
 		21B3F6892B32C6C100907A57 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3F6882B32C6C100907A57 /* File.swift */; };
 		21C1D6582B20499F0022A120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6572B20499F0022A120 /* AppDelegate.swift */; };
@@ -117,6 +118,7 @@
 		218B46332B42B6D10001E367 /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 		219D1AFA2B28166E004A53F6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		219D1B002B282145004A53F6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		219ED4722B43E21700556AF8 /* SoftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
 		21B300132B22DE03005168FF /* SearchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImage.swift; sourceTree = "<group>"; };
 		21B3F6882B32C6C100907A57 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		21C1D6542B20499F0022A120 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 				21125E132B21BFAF004A612D /* AppConst.swift */,
 				21125E112B21BF8C004A612D /* BlueLoder.swift */,
 				218B46332B42B6D10001E367 /* CustomOverlay.swift */,
+				219ED4722B43E21700556AF8 /* SoftUIView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				218B46342B42B6D10001E367 /* CustomOverlay.swift in Sources */,
 				215687CF2B316181002FA0C9 /* ItemList.swift in Sources */,
 				21866BA22B299382000B7B97 /* CollectionList.swift in Sources */,
+				219ED4732B43E21700556AF8 /* SoftUIView.swift in Sources */,
 				21B300142B22DE03005168FF /* SearchImage.swift in Sources */,
 				219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */,
 				21125DF22B2193D1004A612D /* OnboardingVC.swift in Sources */,
