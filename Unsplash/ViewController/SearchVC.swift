@@ -15,11 +15,14 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     @IBOutlet weak var collectionview: UICollectionView!
     @IBOutlet weak var searchTxt: UITextField!
     
-    var images: [UnsplashPhoto] = []
+   /* var images: [UnsplashPhoto] = []
     var pageNumber : Int = 0
-    var isPageRefreshing : Bool = false
+    var isPageRefreshing : Bool = false*/
     
+    var images: [Resulttt] = []
     
+    var pageNumber : Int = 0
+    var isFetchingData: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -31,81 +34,77 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
         
         searchTxt.delegate = self
         
-        searchImages(page: pageNumber)
-        
+    //    searchImages(page: pageNumber)
+        fetchData(query: "office")
     }
     @IBAction func backtap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
         
     }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if(self.collectionview.contentOffset.y >= (self.collectionview.contentSize.height - self.collectionview.bounds.size.height)) {
-            if !isPageRefreshing {
-                isPageRefreshing = true
-                pageNumber = pageNumber + 1
-                searchImages(page: pageNumber)
-            }
-        }
-    }
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        pageNumber = 1
-        searchImages(page: pageNumber)
+        textField.resignFirstResponder() // Dismiss the keyboard
+        // Perform search with the entered query
+        if let query = textField.text, !query.isEmpty {
+            resetDataAndFetch(query: query)
+        }
         return true
     }
-    func searchImages(page: Int) {
-        // Replace "YOUR_ACCESS_KEY" with your Unsplash access key
-        let accessKey = "a82f6bf78409bb9e7f0921a410d9d693d06b98a2d5df9a9cdc8295ab3cb261c1"
-        
-        guard let query = searchTxt.text, !query.isEmpty else {
-            print("Empty query, not performing search.")
-            return
-        }
-        
-        let urlString = "https://api.unsplash.com/photos/?client_id=\(accessKey)&page=\(page)&order_by=\(query)&per_page=20"
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print("Error fetching data: \(error)")
-                return
-            }
-            
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let result = try decoder.decode(UnsplashSearchResponse.self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.images = result.results
-                    self.collectionview.reloadData()
-                }
-            } catch {
-                print("Error decoding data: \(error)")
-            }
-        }.resume()
+    
+    func resetDataAndFetch(query: String) {
+        pageNumber = 0
+        images.removeAll()
+        collectionview.reloadData()
+        fetchData(query: query)
     }
-  
+    func fetchData(query: String) {
+        guard !isFetchingData else { return }
+        isFetchingData = true
+        
+        searchPhotos.shared.fetchImages(page: pageNumber, query: query) { [weak self] fetchedImages in
+            guard let self = self, let fetchedImages = fetchedImages else {
+                self?.isFetchingData = false
+                return
+            }
+            
+            self.isFetchingData = false
+            self.images.append(contentsOf: fetchedImages)
+            DispatchQueue.main.async {
+                self.collectionview.reloadData()
+            }
+            
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+
+        if offsetY > contentHeight - height {
+            if !isFetchingData {
+                pageNumber += 1
+                fetchData(query: searchTxt.text!)
+            }
+        }
+    }
+
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! SearchCollectionView
-        let imageUrlString = images[indexPath.item].urls.regular
-        if let imageUrl = URL(string: imageUrlString) {
+       /* if let imageUrl = images[indexPath.item].coverPhoto?.urls.thumb {
+            cell.configure(with: imageUrl)
+        }*/
+        /*if let imageUrl = URL(string: imageUrlString) {
             cell.imgView.load(url: imageUrl)
-        }
+        }*/
+        let item = images[indexPath.row]
+
+        cell.imgView.sd_setImage(with: URL(string: item.urls.small))
+
         return cell
     }
     

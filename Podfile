@@ -17,6 +17,8 @@ target 'Unsplash' do
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'TOCropViewController'
    pod 'QCropper'
+  pod 'ImageAdjusts'
+
   
   target 'UnsplashTests' do
     inherit! :search_paths

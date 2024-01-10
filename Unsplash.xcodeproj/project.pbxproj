@@ -49,6 +49,10 @@
 		21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21312CC42B26FDE700F5C50A /* SearchVC.swift */; };
 		215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CB2B315091002FA0C9 /* ItemViewController.swift */; };
 		215687CF2B316181002FA0C9 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CE2B316181002FA0C9 /* ItemList.swift */; };
+		217163432B4D1D2A00B8687C /* ImageAdjustView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217163412B4D1D2A00B8687C /* ImageAdjustView.xib */; };
+		217163472B4D395100B8687C /* ImageAdjustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217163462B4D395100B8687C /* ImageAdjustView.swift */; };
+		2171634E2B4D3B9700B8687C /* AdjustImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2171634C2B4D3B9700B8687C /* AdjustImageView.swift */; };
+		2171634F2B4D3B9700B8687C /* AdjustImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2171634D2B4D3B9700B8687C /* AdjustImageView.xib */; };
 		21866BA22B299382000B7B97 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA12B299382000B7B97 /* CollectionList.swift */; };
 		21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */; };
 		218B46322B42B6A20001E367 /* CropperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218B46312B42B6A20001E367 /* CropperVC.swift */; };
@@ -57,7 +61,6 @@
 		219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219D1B002B282145004A53F6 /* ImageViewController.swift */; };
 		219ED4732B43E21700556AF8 /* SoftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219ED4722B43E21700556AF8 /* SoftUIView.swift */; };
 		21B300142B22DE03005168FF /* SearchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B300132B22DE03005168FF /* SearchImage.swift */; };
-		21B3F6892B32C6C100907A57 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3F6882B32C6C100907A57 /* File.swift */; };
 		21C1D6582B20499F0022A120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6572B20499F0022A120 /* AppDelegate.swift */; };
 		21C1D65A2B20499F0022A120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6592B20499F0022A120 /* SceneDelegate.swift */; };
 		21C1D65C2B20499F0022A120 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D65B2B20499F0022A120 /* ViewController.swift */; };
@@ -69,6 +72,7 @@
 		21C1D67B2B2049A40022A120 /* UnsplashUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D67A2B2049A40022A120 /* UnsplashUITestsLaunchTests.swift */; };
 		21C1D68A2B204B400022A120 /* HomePageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D6892B204B400022A120 /* HomePageImage.swift */; };
 		21C1D68C2B206C280022A120 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C1D68B2B206C280022A120 /* CollectionViewCell.swift */; };
+		21F9995B2B47C49C002F5BDE /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9995A2B47C49C002F5BDE /* FavouriteVC.swift */; };
 		4E62E51C73CD77330E9D7B7C /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08F1972F52C47C711D21672 /* Pods_UnsplashTests.framework */; };
 		90E39A38F876AFF6671B7D82 /* Pods_Unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E769F5998A903AE77E981D /* Pods_Unsplash.framework */; };
 		C8B4D6626212B59BE957AE40 /* Pods_Unsplash_UnsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC83AA8B39A7CA19D236006 /* Pods_Unsplash_UnsplashUITests.framework */; };
@@ -112,6 +116,10 @@
 		21312CC42B26FDE700F5C50A /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		215687CB2B315091002FA0C9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		215687CE2B316181002FA0C9 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		217163412B4D1D2A00B8687C /* ImageAdjustView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAdjustView.xib; sourceTree = "<group>"; };
+		217163462B4D395100B8687C /* ImageAdjustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAdjustView.swift; sourceTree = "<group>"; };
+		2171634C2B4D3B9700B8687C /* AdjustImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustImageView.swift; sourceTree = "<group>"; };
+		2171634D2B4D3B9700B8687C /* AdjustImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdjustImageView.xib; sourceTree = "<group>"; };
 		21866BA12B299382000B7B97 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListVC.swift; sourceTree = "<group>"; };
 		218B46312B42B6A20001E367 /* CropperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropperVC.swift; sourceTree = "<group>"; };
@@ -120,7 +128,6 @@
 		219D1B002B282145004A53F6 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		219ED4722B43E21700556AF8 /* SoftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftUIView.swift; sourceTree = "<group>"; };
 		21B300132B22DE03005168FF /* SearchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImage.swift; sourceTree = "<group>"; };
-		21B3F6882B32C6C100907A57 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		21C1D6542B20499F0022A120 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C1D6572B20499F0022A120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C1D6592B20499F0022A120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +143,7 @@
 		21C1D67A2B2049A40022A120 /* UnsplashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		21C1D6892B204B400022A120 /* HomePageImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageImage.swift; sourceTree = "<group>"; };
 		21C1D68B2B206C280022A120 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		21F9995A2B47C49C002F5BDE /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		4FC83AA8B39A7CA19D236006 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A535C5C2C1A19AFFE98FFE4 /* Pods-UnsplashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTests.release.xcconfig"; path = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests.release.xcconfig"; sourceTree = "<group>"; };
 		603669E2591C955FD05A3D9B /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +207,6 @@
 				21125E132B21BFAF004A612D /* AppConst.swift */,
 				21125E112B21BF8C004A612D /* BlueLoder.swift */,
 				218B46332B42B6D10001E367 /* CustomOverlay.swift */,
-				219ED4722B43E21700556AF8 /* SoftUIView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -213,8 +220,12 @@
 				219D1B002B282145004A53F6 /* ImageViewController.swift */,
 				21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */,
 				215687CB2B315091002FA0C9 /* ItemViewController.swift */,
-				21B3F6882B32C6C100907A57 /* File.swift */,
 				218B46312B42B6A20001E367 /* CropperVC.swift */,
+				21F9995A2B47C49C002F5BDE /* FavouriteVC.swift */,
+				217163412B4D1D2A00B8687C /* ImageAdjustView.xib */,
+				217163462B4D395100B8687C /* ImageAdjustView.swift */,
+				2171634C2B4D3B9700B8687C /* AdjustImageView.swift */,
+				2171634D2B4D3B9700B8687C /* AdjustImageView.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 		21C1D6562B20499F0022A120 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				21CD31A42B466CE90042B654 /* View */,
 				219D1AFE2B281737004A53F6 /* CollectionViewCell */,
 				219D1AFD2B2816EA004A53F6 /* Model */,
 				219D1AFC2B2816D1004A53F6 /* ViewController */,
@@ -293,6 +305,14 @@
 				21C1D67A2B2049A40022A120 /* UnsplashUITestsLaunchTests.swift */,
 			);
 			path = UnsplashUITests;
+			sourceTree = "<group>";
+		};
+		21CD31A42B466CE90042B654 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				219ED4722B43E21700556AF8 /* SoftUIView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DC271B69A8315F4A62A78AF2 /* Pods */ = {
@@ -429,6 +449,7 @@
 			files = (
 				21125DD62B218E8F004A612D /* Roboto-Thin.ttf in Resources */,
 				21125DD02B218E8F004A612D /* Roboto-Medium.ttf in Resources */,
+				2171634F2B4D3B9700B8687C /* AdjustImageView.xib in Resources */,
 				21125DD72B218E8F004A612D /* Roboto-LightItalic.ttf in Resources */,
 				21125DD52B218E8F004A612D /* Roboto-Bold.ttf in Resources */,
 				21125DD32B218E8F004A612D /* Roboto-Regular.ttf in Resources */,
@@ -440,6 +461,7 @@
 				21125DCD2B218E8F004A612D /* Roboto-Black.ttf in Resources */,
 				21125DCF2B218E8F004A612D /* Roboto-Light.ttf in Resources */,
 				21125DD22B218E8F004A612D /* Roboto-Italic.ttf in Resources */,
+				217163432B4D1D2A00B8687C /* ImageAdjustView.xib in Resources */,
 				21C1D6612B2049A40022A120 /* Assets.xcassets in Resources */,
 				21C1D65F2B20499F0022A120 /* Main.storyboard in Resources */,
 			);
@@ -595,21 +617,23 @@
 			files = (
 				21125E142B21BFAF004A612D /* AppConst.swift in Sources */,
 				21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */,
+				217163472B4D395100B8687C /* ImageAdjustView.swift in Sources */,
 				215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */,
 				21125E122B21BF8C004A612D /* BlueLoder.swift in Sources */,
 				218B46322B42B6A20001E367 /* CropperVC.swift in Sources */,
 				218B46342B42B6D10001E367 /* CustomOverlay.swift in Sources */,
 				215687CF2B316181002FA0C9 /* ItemList.swift in Sources */,
 				21866BA22B299382000B7B97 /* CollectionList.swift in Sources */,
+				2171634E2B4D3B9700B8687C /* AdjustImageView.swift in Sources */,
 				219ED4732B43E21700556AF8 /* SoftUIView.swift in Sources */,
 				21B300142B22DE03005168FF /* SearchImage.swift in Sources */,
 				219D1AFB2B28166E004A53F6 /* APIManager.swift in Sources */,
 				21125DF22B2193D1004A612D /* OnboardingVC.swift in Sources */,
 				21C1D68C2B206C280022A120 /* CollectionViewCell.swift in Sources */,
 				21C1D68A2B204B400022A120 /* HomePageImage.swift in Sources */,
-				21B3F6892B32C6C100907A57 /* File.swift in Sources */,
 				21C1D65C2B20499F0022A120 /* ViewController.swift in Sources */,
 				21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */,
+				21F9995B2B47C49C002F5BDE /* FavouriteVC.swift in Sources */,
 				21C1D6582B20499F0022A120 /* AppDelegate.swift in Sources */,
 				219D1B012B282145004A53F6 /* ImageViewController.swift in Sources */,
 				21C1D65A2B20499F0022A120 /* SceneDelegate.swift in Sources */,

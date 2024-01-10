@@ -17,15 +17,13 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var totalPic = 0
     var pageNumber : Int = 0
     var isFetchingData: Bool = false
-    
-    
+
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(photoId)
         self.navigationItem.setHidesBackButton(true, animated: true)
         fetchData()
-        print(totalPic)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -73,7 +71,7 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! ItemCollectionViewCell
         let item = images[indexPath.row]
-        cell.imgView.sd_setImage(with: URL(string: item.urls.smallS3))
+        cell.imgView.sd_setImage(with: URL(string: item.urls.small))
         return cell
         
     }
@@ -94,6 +92,7 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
@@ -103,14 +102,19 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = images[indexPath.row]
+        
         showImageDetailViewController(image: selectedImage)
     }
     func showImageDetailViewController(image: ItemListDatum) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let imageDetailVC = storyboard.instantiateViewController(withIdentifier: "viewImage") as? ImageViewController {
             imageDetailVC.selectedImagee = image
+            imageDetailVC.productID = photoId
             self.navigationController?.pushViewController(imageDetailVC, animated: true)
         }
+        
+       
     }
+    
 }
 

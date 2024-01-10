@@ -26,6 +26,7 @@ class CollectionListVC:  UIViewController,  UICollectionViewDelegate, UICollecti
         collectionview.delegate = self
         collectionview.dataSource = self
         collectionview.collectionViewLayout = UICollectionViewFlowLayout()
+        collectionview.reloadData()
         searchbarTxt.delegate = self
         
         fetchData(page: pageNumber, query: "office")
@@ -105,6 +106,8 @@ class CollectionListVC:  UIViewController,  UICollectionViewDelegate, UICollecti
         vc.photoId = images[indexPath.item].id!
         vc.totalPic = images[indexPath.item].totalPhotos!
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
     
 }

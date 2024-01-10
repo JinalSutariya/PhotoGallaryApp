@@ -16,6 +16,8 @@ enum OrderingCriteria {
 }
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
     
+    @IBOutlet weak var moreStackView: UIStackView!
+    @IBOutlet weak var moreView: SoftUIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -41,15 +43,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         setupSubtitleView()
+        moreView.isHidden = true
+        moreView.addSubview(moreStackView)
         outerView.layer.cornerRadius = 30
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.collectionViewLayout = UICollectionViewFlowLayout();
+        
+        
         collectionPhotos(page: pageNumber, orderby: "latest")
         setupForwardView()
         
         cottomView.addSubview(stackView)
-        collectionView.collectionViewLayout = UICollectionViewFlowLayout();
-        
+        favBtn.addTarget(self, action: #selector(tapFav), for: .touchUpInside)
+
         collectionBtn.makeNeuromorphic(cornerRadius: collectionBtn.bounds.height/2, superView: self.view)
         randomBtn.makeNeuromorphic(cornerRadius: randomBtn.bounds.height/2, superView: self.view)
         popullarbtn.makeNeuromorphic(cornerRadius: popullarbtn.bounds.height/2, superView: self.view)
@@ -94,6 +102,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionPhotos(page: pageNumber, orderby: orderby)
     }
     
+    @IBAction func moreBtnTap(_ sender: Any) {
+        moreView.isHidden = !moreView.isHidden
+        
+    }
     @IBAction func collectionTap(_ sender: Any) {
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "collectionlist") as! CollectionListVC
         self.navigationController?.pushViewController(secondViewController, animated: true)
@@ -112,9 +124,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.reloadData()
         
     }
+    @IBAction func favTap(_ sender: Any) {
+       
+    }
     
-    //MARK: Setup ListView
-    
+    @IBAction func saveTap(_ sender: Any) {
+    }
+    @objc func tapFav() {
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "favouriteVC") as! FavouriteVC
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+        }
     
     //MARK: List Size
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -160,13 +179,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     // MARK: - custome function
-
-
+    
+    
     func setupSubtitleView() {
         cottomView.type = .normal
         cottomView.isSelected = true
+        
+        moreView.type = .normal
+        moreView.isSelected = true
+        
+        
+        
     }
-
+    
     func setupForwardView() {
         homeBtn.type = .toggleButton
         
@@ -177,7 +202,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         homeBtn.cornerRadius = homeBtn.frame.size.width/2
         favBtn.cornerRadius = favBtn.frame.size.width/2
         saveBtn.cornerRadius = saveBtn.frame.size.width/2
-
+        
         let icon = UIImage(named: "Home")
         let icon2 = UIImage(named: "Favourite")
         let icon3 = UIImage(named: "Save")
@@ -185,30 +210,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let imageView = UIImageView(image: icon)
         let imageView2 = UIImageView(image: icon2)
         let imageView3 = UIImageView(image: icon3)
-
+        
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .darkGray
-
+        
         homeBtn.setContentView(imageView)
         imageView.centerXAnchor.constraint(equalTo: homeBtn.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: homeBtn.centerYAnchor).isActive = true
         
         imageView2.translatesAutoresizingMaskIntoConstraints = false
         imageView2.tintColor = .darkGray
-
+        
         favBtn.setContentView(imageView2)
         imageView2.centerXAnchor.constraint(equalTo: favBtn.centerXAnchor).isActive = true
         imageView2.centerYAnchor.constraint(equalTo: favBtn.centerYAnchor).isActive = true
         
         imageView3.translatesAutoresizingMaskIntoConstraints = false
         imageView3.tintColor = .darkGray
-
+        
         saveBtn.setContentView(imageView3)
         imageView3.centerXAnchor.constraint(equalTo: saveBtn.centerXAnchor).isActive = true
         imageView3.centerYAnchor.constraint(equalTo: saveBtn.centerYAnchor).isActive = true
     }
-
+    
     
 }
 

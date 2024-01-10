@@ -40,6 +40,43 @@ class ModelManager {
         }.resume()
     }
 }
+//https://api.unsplash.com/search/photos/?client_id=a82f6bf78409bb9e7f0921a410d9d693d06b98a2d5df9a9cdc8295ab3cb261c1&query=india&page=1&per_page=20
+
+class searchPhotos {
+    static let shared = searchPhotos()
+    
+    private init() {}
+    
+    func fetchImages(page: Int, query: String, completion: @escaping ([Resulttt]?) -> Void) {
+        let clientId = "a82f6bf78409bb9e7f0921a410d9d693d06b98a2d5df9a9cdc8295ab3cb261c1"
+        
+        guard let url = URL(string: "https://api.unsplash.com/search/photos/?client_id=\(clientId)&query=\(query)&page=\(page)&per_page=20") else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let collectionList = try decoder.decode(SearchImage.self, from: data)
+                completion(collectionList.results)
+                //   print(collectionList)
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
+}
+
 class ItemManager {
     static let shared = ItemManager()
     
@@ -66,7 +103,7 @@ class ItemManager {
                 decoder.dateDecodingStrategy = .iso8601
                 let collectionList = try decoder.decode(ItemListData.self, from: data)
                 completion(collectionList)
-             //   print(collectionList)
+                //   print(collectionList)
             } catch {
                 print("Error decoding JSON: \(error)")
                 completion(nil)
@@ -100,7 +137,7 @@ class CollectionlistManager {
                 decoder.dateDecodingStrategy = .iso8601
                 let collectionList = try decoder.decode(CollectionList.self, from: data)
                 completion(collectionList.results)
-             //   print(collectionList)
+                //   print(collectionList)
             } catch {
                 print("Error decoding JSON: \(error)")
                 completion(nil)

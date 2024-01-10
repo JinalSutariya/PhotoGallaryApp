@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdjustImageView" customModule="Unsplash" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="10g-it-tfb" customClass="AdjustImageView" customModule="Unsplash">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEE-zW-TEx">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FormatRotate" translatesAutoresizingMaskIntoConstraints="NO" id="nfU-O5-92E">
+                            <rect key="frame" x="27" y="19" width="26" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="nfU-O5-92E" secondAttribute="height" multiplier="1:1" id="7hn-Xy-HDd"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="nfU-O5-92E" firstAttribute="centerX" secondItem="QEE-zW-TEx" secondAttribute="centerX" id="6Xq-Xl-cXF"/>
+                        <constraint firstItem="nfU-O5-92E" firstAttribute="leading" secondItem="QEE-zW-TEx" secondAttribute="leading" constant="27" id="brv-IO-zTF"/>
+                        <constraint firstItem="nfU-O5-92E" firstAttribute="top" secondItem="QEE-zW-TEx" secondAttribute="top" constant="19" id="oEc-TT-5nf"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS3-H6-b2T">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="PS3-H6-b2T" secondAttribute="height" multiplier="1:1" id="Xey-zl-z62"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onEffectClick:" destination="10g-it-tfb" eventType="touchUpInside" id="Bld-iz-ULg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Lb4-sc-u8Q"/>
+            <color key="backgroundColor" white="0.0" alpha="0.1049871575" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QEE-zW-TEx" firstAttribute="leading" secondItem="10g-it-tfb" secondAttribute="leading" id="3tl-aw-gEZ"/>
+                <constraint firstItem="PS3-H6-b2T" firstAttribute="leading" secondItem="10g-it-tfb" secondAttribute="leading" id="5qG-oi-iCF"/>
+                <constraint firstItem="QEE-zW-TEx" firstAttribute="top" secondItem="10g-it-tfb" secondAttribute="top" id="67X-8i-4oq"/>
+                <constraint firstAttribute="trailing" secondItem="PS3-H6-b2T" secondAttribute="trailing" id="7pA-5L-gfA"/>
+                <constraint firstAttribute="bottom" secondItem="PS3-H6-b2T" secondAttribute="bottom" id="8eY-Ak-Bjw"/>
+                <constraint firstItem="PS3-H6-b2T" firstAttribute="top" secondItem="10g-it-tfb" secondAttribute="top" id="HQc-1O-rwR"/>
+                <constraint firstAttribute="trailing" secondItem="QEE-zW-TEx" secondAttribute="trailing" id="ZPy-S1-o18"/>
+                <constraint firstAttribute="bottom" secondItem="QEE-zW-TEx" secondAttribute="bottom" id="pic-iP-HtO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconImage" destination="nfU-O5-92E" id="XOY-70-Sp6"/>
+                <outlet property="scaleView" destination="QEE-zW-TEx" id="MgB-tT-zMD"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="-10"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="FormatRotate" width="24" height="24"/>
+    </resources>
+</document>

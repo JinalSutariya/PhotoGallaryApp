@@ -6,6 +6,7 @@ PODS:
     - CHTCollectionViewWaterfallLayout/Swift (= 0.9.10)
   - CHTCollectionViewWaterfallLayout/Swift (0.9.10)
   - FittedSheets (2.6.1)
+  - ImageAdjusts (0.1.8)
   - PaginatedTableView (1.0.1)
   - QCropper (0.1.7)
   - SDDownloadManager (1.1.0)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 4.1)
   - CHTCollectionViewWaterfallLayout
   - FittedSheets
+  - ImageAdjusts
   - PaginatedTableView
   - QCropper
   - SDDownloadManager
@@ -35,6 +37,7 @@ SPEC REPOS:
     - AlamofireImage
     - CHTCollectionViewWaterfallLayout
     - FittedSheets
+    - ImageAdjusts
     - PaginatedTableView
     - QCropper
     - SDDownloadManager
@@ -48,6 +51,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
   CHTCollectionViewWaterfallLayout: b989a459788d7657ac010e03bc0f7eedca95a420
   FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
+  ImageAdjusts: 26e793e49d76e176b029f792d6c3fbd3deb84c07
   PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
   QCropper: aef6bad1e683e62b501fb8258359ccd10c68b4f2
   SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
-PODFILE CHECKSUM: 08a33e4302c50806b33ffe59e29bd7edf4b22726
+PODFILE CHECKSUM: 0fd57192c07101e4971565d8cfab1334cc5cc407
 
 COCOAPODS: 1.13.0
