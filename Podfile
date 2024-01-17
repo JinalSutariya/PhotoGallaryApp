@@ -18,6 +18,8 @@ target 'Unsplash' do
   pod 'TOCropViewController'
    pod 'QCropper'
   pod 'ImageAdjusts'
+  pod 'SQLite.swift/SQLCipher'
+
 
   
   target 'UnsplashTests' do

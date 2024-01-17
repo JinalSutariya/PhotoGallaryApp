@@ -14,6 +14,13 @@ PODS:
     - SDWebImage/Core (= 5.18.7)
   - SDWebImage/Core (5.18.7)
   - SoftButton (0.1.0)
+  - SQLCipher (4.5.5):
+    - SQLCipher/standard (= 4.5.5)
+  - SQLCipher/common (4.5.5)
+  - SQLCipher/standard (4.5.5):
+    - SQLCipher/common
+  - SQLite.swift/SQLCipher (0.14.1):
+    - SQLCipher (>= 4.0.0)
   - Toast-Swift (5.0.1)
   - TOCropViewController (2.6.1)
 
@@ -28,6 +35,7 @@ DEPENDENCIES:
   - SDDownloadManager
   - SDWebImage
   - SoftButton
+  - SQLite.swift/SQLCipher
   - Toast-Swift (~> 5.0.1)
   - TOCropViewController
 
@@ -43,6 +51,8 @@ SPEC REPOS:
     - SDDownloadManager
     - SDWebImage
     - SoftButton
+    - SQLCipher
+    - SQLite.swift
     - Toast-Swift
     - TOCropViewController
 
@@ -57,9 +67,11 @@ SPEC CHECKSUMS:
   SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
   SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
   SoftButton: 047bf63ec0c6b6c6a19c02a6f9e5ee4c79d853f3
+  SQLCipher: f2e96b3822e3006b379181a0e4fd145f6de29b56
+  SQLite.swift: 2992550ebf3c5b268bf4352603e3df87d2a4ed72
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
-PODFILE CHECKSUM: 0fd57192c07101e4971565d8cfab1334cc5cc407
+PODFILE CHECKSUM: 5182e275533269421f305cfd1cb42b3062e08fe6
 
 COCOAPODS: 1.13.0
