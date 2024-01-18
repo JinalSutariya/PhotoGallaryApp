@@ -6,18 +6,17 @@ PODS:
     - CHTCollectionViewWaterfallLayout/Swift (= 0.9.10)
   - CHTCollectionViewWaterfallLayout/Swift (0.9.10)
   - FittedSheets (2.6.1)
-  - ImageAdjusts (0.1.8)
   - PaginatedTableView (1.0.1)
   - QCropper (0.1.7)
   - SDDownloadManager (1.1.0)
-  - SDWebImage (5.18.7):
-    - SDWebImage/Core (= 5.18.7)
-  - SDWebImage/Core (5.18.7)
+  - SDWebImage (5.18.10):
+    - SDWebImage/Core (= 5.18.10)
+  - SDWebImage/Core (5.18.10)
   - SoftButton (0.1.0)
-  - SQLCipher (4.5.5):
-    - SQLCipher/standard (= 4.5.5)
-  - SQLCipher/common (4.5.5)
-  - SQLCipher/standard (4.5.5):
+  - SQLCipher (4.5.6):
+    - SQLCipher/standard (= 4.5.6)
+  - SQLCipher/common (4.5.6)
+  - SQLCipher/standard (4.5.6):
     - SQLCipher/common
   - SQLite.swift/SQLCipher (0.14.1):
     - SQLCipher (>= 4.0.0)
@@ -29,7 +28,6 @@ DEPENDENCIES:
   - AlamofireImage (~> 4.1)
   - CHTCollectionViewWaterfallLayout
   - FittedSheets
-  - ImageAdjusts
   - PaginatedTableView
   - QCropper
   - SDDownloadManager
@@ -45,7 +43,6 @@ SPEC REPOS:
     - AlamofireImage
     - CHTCollectionViewWaterfallLayout
     - FittedSheets
-    - ImageAdjusts
     - PaginatedTableView
     - QCropper
     - SDDownloadManager
@@ -61,17 +58,16 @@ SPEC CHECKSUMS:
   AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
   CHTCollectionViewWaterfallLayout: b989a459788d7657ac010e03bc0f7eedca95a420
   FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
-  ImageAdjusts: 26e793e49d76e176b029f792d6c3fbd3deb84c07
   PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
   QCropper: aef6bad1e683e62b501fb8258359ccd10c68b4f2
   SDDownloadManager: 62a9339c03ea27606effefd9aa1800e4127e3a52
-  SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
+  SDWebImage: fc8f2d48bbfd72ef39d70e981bd24a3f3be53fec
   SoftButton: 047bf63ec0c6b6c6a19c02a6f9e5ee4c79d853f3
-  SQLCipher: f2e96b3822e3006b379181a0e4fd145f6de29b56
+  SQLCipher: 838309284f29953a28ad2e81d87d55ea6b7c74fd
   SQLite.swift: 2992550ebf3c5b268bf4352603e3df87d2a4ed72
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
 
-PODFILE CHECKSUM: 5182e275533269421f305cfd1cb42b3062e08fe6
+PODFILE CHECKSUM: a3860c99e136c1e840c12fae33e693e49536f303
 
 COCOAPODS: 1.13.0

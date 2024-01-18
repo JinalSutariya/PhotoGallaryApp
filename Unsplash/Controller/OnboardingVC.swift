@@ -14,7 +14,6 @@ class OnboardingVC: UIViewController {
         super.viewDidLoad()
         descLbl.text = "We make cool wallpaper for you. \nwhich you can enjoy and use for free"
         goBtn.layer.cornerRadius = goBtn.frame.size.height/2
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func goTap(_ sender: Any) {

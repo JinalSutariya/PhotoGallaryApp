@@ -10,6 +10,8 @@ import UIKit
 class CollectionListViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var totalPhotos: UILabel!
+    @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

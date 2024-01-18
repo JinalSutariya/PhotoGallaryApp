@@ -17,7 +17,6 @@ target 'Unsplash' do
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'TOCropViewController'
    pod 'QCropper'
-  pod 'ImageAdjusts'
   pod 'SQLite.swift/SQLCipher'
 
 

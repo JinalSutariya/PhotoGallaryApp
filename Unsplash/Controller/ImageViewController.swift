@@ -52,7 +52,7 @@ class ImageViewController: UIViewController {
     var productID: String?
     var favImage: UIImage?
     var saveeImage: UIImage?
-  
+    var searchImage: Resulttt?
    
 
    
@@ -85,9 +85,12 @@ class ImageViewController: UIViewController {
             
         }else if let saveImage = saveeImage{
             imgView.image = saveeImage
+        }else if let searchImage = searchImage{
+            let imageUrl = URL(string: (searchImage.urls.full))
+            imgView.sd_setImage(with: imageUrl)
         }
     }
-    
+   
     @objc func tapFav() {
         if let image = imgView.image {
             if let imageData = image.pngData() {
@@ -134,22 +137,42 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func brightnessTap(_ sender: Any) {
-        
+
     }
     @IBAction func changeBrightness(_ sender: UISlider) {
  
        
-    }
+        updateImageBrightness(brightness: sender.value)
+           }
+
+           func updateImageBrightness(brightness: Float) {
+               if let originalImage = imgView.image {
+                   let context = CIContext(options: nil)
+                   if let ciImage = CIImage(image: originalImage) {
+                       let filter = CIFilter(name: "CIColorControls")
+                       filter?.setValue(ciImage, forKey: kCIInputImageKey)
+                       filter?.setValue(brightness, forKey: kCIInputBrightnessKey)
+
+                       if let outputImage = filter?.outputImage,
+                          let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                           let processedImage = UIImage(cgImage: cgImage)
+                           imgView.image = processedImage
+                       }
+                   }
+               }
+           }
     @IBAction func contrastButtonTapped(_ sender: UIButton) {
+
+    }
+    @IBAction func moreTap(_ sender: Any) {
+        if #available(iOS 9.0, *) {
+            let imageAdjustView = ImageAdjustView.create(image : self.imgView.image!)
+            imageAdjustView.selectSaveImageCallback = { image in
+                self.setframeImageUI(image : image , isChanges : true)
+            }
+        }
     }
     
-    @IBAction func moreTap(_ sender: Any) {
-   
-        
-    }
-    @IBAction func favTap(_ sender: Any) {
-      
-    }
     private func showAlert(message: String) {
             let alert = UIAlertController(title: "Wishlist", message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -170,8 +193,7 @@ class ImageViewController: UIViewController {
     
     @objc func saveImage() {
         guard let imageToSave = imgView.image else {
-            // Handle the case where there's no image to save
-            return
+                                         return
         }
         if let image = imgView.image {
             if let imageData = image.pngData() {

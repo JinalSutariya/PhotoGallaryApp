@@ -91,8 +91,14 @@ class CollectionListVC:  UIViewController,  UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CollectionListViewCell
         
-        if let imageUrl = images[indexPath.item].coverPhoto?.urls.thumb {
-            cell.configure(with: imageUrl)
+        if let imageUrl = images[indexPath.item].coverPhoto?.urls.small {
+        //    cell.configure(with: imageUrl)
+            cell.imgView.sd_setImage(with: URL(string: imageUrl))
+
+        }
+        cell.cityName.text = images[indexPath.item].title
+        if let totalPhotosValue = images[indexPath.item].totalPhotos {
+            cell.totalPhotos.text = "\(totalPhotosValue)"
         }
         return cell
     }

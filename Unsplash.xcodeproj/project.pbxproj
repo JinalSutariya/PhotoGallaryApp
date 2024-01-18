@@ -55,6 +55,11 @@
 		21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21312CC42B26FDE700F5C50A /* SearchVC.swift */; };
 		215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CB2B315091002FA0C9 /* ItemViewController.swift */; };
 		215687CF2B316181002FA0C9 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215687CE2B316181002FA0C9 /* ItemList.swift */; };
+		21738F892B5916DD0047F23D /* ImageAdjustView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218354782B58F228006F9DF1 /* ImageAdjustView.xib */; };
+		21738F8A2B5916F00047F23D /* AdjustImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218354762B58F228006F9DF1 /* AdjustImageView.xib */; };
+		21738F8C2B591E0A0047F23D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21738F8B2B591E0A0047F23D /* File.swift */; };
+		218354792B58F228006F9DF1 /* ImageAdjustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218354752B58F227006F9DF1 /* ImageAdjustView.swift */; };
+		2183547A2B58F228006F9DF1 /* AdjustImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218354772B58F228006F9DF1 /* AdjustImageView.swift */; };
 		21866BA22B299382000B7B97 /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA12B299382000B7B97 /* CollectionList.swift */; };
 		21866BA42B29A1EA000B7B97 /* CollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */; };
 		2187579E2B56917A009EFDAA /* SaveImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187579D2B56917A009EFDAA /* SaveImageData.swift */; };
@@ -126,6 +131,11 @@
 		21312CC42B26FDE700F5C50A /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		215687CB2B315091002FA0C9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		215687CE2B316181002FA0C9 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		21738F8B2B591E0A0047F23D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		218354752B58F227006F9DF1 /* ImageAdjustView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAdjustView.swift; sourceTree = "<group>"; };
+		218354762B58F228006F9DF1 /* AdjustImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdjustImageView.xib; sourceTree = "<group>"; };
+		218354772B58F228006F9DF1 /* AdjustImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustImageView.swift; sourceTree = "<group>"; };
+		218354782B58F228006F9DF1 /* ImageAdjustView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAdjustView.xib; sourceTree = "<group>"; };
 		21866BA12B299382000B7B97 /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		21866BA32B29A1EA000B7B97 /* CollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListVC.swift; sourceTree = "<group>"; };
 		2187579D2B56917A009EFDAA /* SaveImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageData.swift; sourceTree = "<group>"; };
@@ -243,6 +253,11 @@
 				218B46312B42B6A20001E367 /* CropperVC.swift */,
 				219D1B002B282145004A53F6 /* ImageViewController.swift */,
 				215687CB2B315091002FA0C9 /* ItemViewController.swift */,
+				218354772B58F228006F9DF1 /* AdjustImageView.swift */,
+				218354762B58F228006F9DF1 /* AdjustImageView.xib */,
+				218354752B58F227006F9DF1 /* ImageAdjustView.swift */,
+				218354782B58F228006F9DF1 /* ImageAdjustView.xib */,
+				21738F8B2B591E0A0047F23D /* File.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,6 +487,7 @@
 			files = (
 				21125DD62B218E8F004A612D /* Roboto-Thin.ttf in Resources */,
 				21125DD02B218E8F004A612D /* Roboto-Medium.ttf in Resources */,
+				21738F8A2B5916F00047F23D /* AdjustImageView.xib in Resources */,
 				21125DD72B218E8F004A612D /* Roboto-LightItalic.ttf in Resources */,
 				21125DD52B218E8F004A612D /* Roboto-Bold.ttf in Resources */,
 				21125DD32B218E8F004A612D /* Roboto-Regular.ttf in Resources */,
@@ -483,6 +499,7 @@
 				21125DCD2B218E8F004A612D /* Roboto-Black.ttf in Resources */,
 				21125DCF2B218E8F004A612D /* Roboto-Light.ttf in Resources */,
 				21125DD22B218E8F004A612D /* Roboto-Italic.ttf in Resources */,
+				21738F892B5916DD0047F23D /* ImageAdjustView.xib in Resources */,
 				21C1D6612B2049A40022A120 /* Assets.xcassets in Resources */,
 				21C1D65F2B20499F0022A120 /* Main.storyboard in Resources */,
 			);
@@ -636,11 +653,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2183547A2B58F228006F9DF1 /* AdjustImageView.swift in Sources */,
 				21125E142B21BFAF004A612D /* AppConst.swift in Sources */,
 				21312CC52B26FDE700F5C50A /* SearchVC.swift in Sources */,
 				21D243D32B4FE9D30043029F /* DownloadVC.swift in Sources */,
 				21D243CF2B4FE6A80043029F /* HomePageVC.swift in Sources */,
+				21738F8C2B591E0A0047F23D /* File.swift in Sources */,
 				211D6DA62B50FA9700BF4AFD /* SearchCollectionView.swift in Sources */,
+				218354792B58F228006F9DF1 /* ImageAdjustView.swift in Sources */,
 				211D6DA82B50FAE300BF4AFD /* CollectionListViewCell.swift in Sources */,
 				215687CC2B315091002FA0C9 /* ItemViewController.swift in Sources */,
 				211D6DAC2B50FB6A00BF4AFD /* FavouriteCollectionViewCell.swift in Sources */,
@@ -856,6 +876,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -886,6 +907,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -909,7 +931,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BV827BG4DQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoApp.ios.UnsplashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -930,7 +952,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BV827BG4DQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoApp.ios.UnsplashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -950,6 +972,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BV827BG4DQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoApp.ios.UnsplashUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -969,6 +992,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BV827BG4DQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoApp.ios.UnsplashUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

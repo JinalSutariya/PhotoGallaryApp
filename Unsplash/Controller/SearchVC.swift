@@ -123,7 +123,14 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacingBetweenCells
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedImage = images[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let imageDetailVC = storyboard.instantiateViewController(withIdentifier: "viewImage") as? ImageViewController {
+            imageDetailVC.searchImage = images[indexPath.item]
+            self.navigationController?.pushViewController(imageDetailVC, animated: true)
+        }
+    }
 }
 
 extension UIImageView {
