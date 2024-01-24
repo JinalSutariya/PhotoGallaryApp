@@ -41,6 +41,7 @@ class ViewController: UIViewController, DataLoadDelegate, SaveDataLoadDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         setupSubtitleView()
         moreView.isHidden = true

@@ -31,13 +31,8 @@ class ImageAdjustView : UIView, UIGestureRecognizerDelegate {
     var brightnessValue : CGFloat = 0
     var saturationVlue : CGFloat = 1.0
     var contrastValue : CGFloat = 1.0
-    var sharpnessValue : CGFloat = 0.40
     var warmthValue : CGFloat = 157.67
-    var exposureValue : CGFloat = 0.50
-    var highlightValue : CGFloat = 1.0
-    var shadowsValue : CGFloat = 0.0
     var vibranceValue : CGFloat = 0.0
-    var tintValue : CGFloat = 1.0
     var fadeValue : CGFloat = 0.0
     
     var shadesArray = [Shades.Brightness, Shades.Saturation, Shades.Contrast, Shades.Warmth, Shades.Vibrance, Shades.Fade]
@@ -102,7 +97,6 @@ class ImageAdjustView : UIView, UIGestureRecognizerDelegate {
                 print(frame)
                 self.screenSortView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
                 self.screenSortView.center = CGPoint(x : self.mainView.getWidth / 2 , y: self.mainView.getHeight / 2)
-             //   self.backImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
             }, completion: { finished in
                 self.setEffecList()
             })

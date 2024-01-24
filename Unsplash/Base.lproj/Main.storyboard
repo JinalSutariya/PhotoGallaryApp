@@ -661,89 +661,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="027-7r-wWb" customClass="SoftUIView" customModule="Unsplash">
                                 <rect key="frame" x="50" y="607" width="293" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="m4N-ie-gDL">
-                                        <rect key="frame" x="16.666666666666686" y="81.666666666666629" width="260" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkP-tX-bAd">
-                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="23Q-8V-wYE"/>
-                                                    <constraint firstAttribute="height" constant="25" id="Rh5-g7-gRv"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter1"/>
-                                                <connections>
-                                                    <action selector="brightnessTap:" destination="Apd-ah-zjN" eventType="touchUpInside" id="G9k-rC-ycV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcW-N9-ouM">
-                                                <rect key="frame" x="47" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="Jav-FI-nq6"/>
-                                                    <constraint firstAttribute="height" constant="25" id="kFH-eO-bVf"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter2"/>
-                                                <connections>
-                                                    <action selector="contrastButtonTapped:" destination="Apd-ah-zjN" eventType="touchUpInside" id="Udk-Q0-O1P"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWS-xT-3Ob">
-                                                <rect key="frame" x="93.999999999999986" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="lXv-5Y-SFt"/>
-                                                    <constraint firstAttribute="height" constant="25" id="xmX-iA-agh"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter3"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-R7-HBe">
-                                                <rect key="frame" x="141" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="nv6-3l-BqT"/>
-                                                    <constraint firstAttribute="height" constant="25" id="xe7-X9-tQa"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter4"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZF-ID-xTI">
-                                                <rect key="frame" x="188" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="0l1-m5-X0R"/>
-                                                    <constraint firstAttribute="height" constant="25" id="ex3-Kn-dpx"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter5"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hv-yg-Rjh">
-                                                <rect key="frame" x="235" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="Acq-v6-hfK"/>
-                                                    <constraint firstAttribute="width" constant="25" id="Hkv-pP-jmb"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="filter6"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ro2-q1-rJW">
-                                        <rect key="frame" x="15" y="27" width="264" height="30"/>
+                                        <rect key="frame" x="14" y="30" width="265" height="31"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="changeBrightness:" destination="Apd-ah-zjN" eventType="valueChanged" id="Mcd-hh-Hqs"/>
+                                            <action selector="changeBrightness:" destination="Apd-ah-zjN" eventType="valueChanged" id="Ryj-cZ-b0E"/>
                                         </connections>
                                     </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXu-za-A5a">
+                                        <rect key="frame" x="18" y="75" width="257" height="37"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="ro2-q1-rJW" firstAttribute="top" secondItem="027-7r-wWb" secondAttribute="top" constant="27" id="7fP-Lb-11O"/>
                                     <constraint firstAttribute="height" constant="120" id="AUy-bO-CV3"/>
-                                    <constraint firstItem="m4N-ie-gDL" firstAttribute="centerX" secondItem="027-7r-wWb" secondAttribute="centerX" id="J8X-0s-ppT"/>
-                                    <constraint firstItem="ro2-q1-rJW" firstAttribute="leading" secondItem="027-7r-wWb" secondAttribute="leading" constant="17" id="T5D-6y-3MJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="ro2-q1-rJW" secondAttribute="trailing" constant="16" id="diQ-4O-YLs"/>
-                                    <constraint firstItem="m4N-ie-gDL" firstAttribute="top" secondItem="ro2-q1-rJW" secondAttribute="bottom" constant="25.666666666666629" id="q9v-6B-g8S"/>
-                                    <constraint firstItem="m4N-ie-gDL" firstAttribute="width" secondItem="027-7r-wWb" secondAttribute="width" multiplier="0.887372" id="rcw-fb-qbA"/>
-                                    <constraint firstAttribute="bottom" secondItem="m4N-ie-gDL" secondAttribute="bottom" constant="13.333333333333371" id="vLh-UD-xdk"/>
+                                    <constraint firstItem="ro2-q1-rJW" firstAttribute="top" secondItem="027-7r-wWb" secondAttribute="top" constant="30" id="I0X-1A-Rud"/>
+                                    <constraint firstItem="TXu-za-A5a" firstAttribute="top" secondItem="ro2-q1-rJW" secondAttribute="bottom" constant="15" id="cHp-qZ-xPA" customClass="SoftUI"/>
+                                    <constraint firstAttribute="trailing" secondItem="TXu-za-A5a" secondAttribute="trailing" constant="18" id="dp8-0b-4A5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ro2-q1-rJW" secondAttribute="trailing" constant="16" id="l1n-Km-UVx"/>
+                                    <constraint firstItem="TXu-za-A5a" firstAttribute="leading" secondItem="027-7r-wWb" secondAttribute="leading" constant="18" id="mdm-WM-w4Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="TXu-za-A5a" secondAttribute="bottom" constant="8" id="p88-P8-wgL"/>
+                                    <constraint firstItem="ro2-q1-rJW" firstAttribute="leading" secondItem="027-7r-wWb" secondAttribute="leading" constant="16" id="t1p-af-Fyc"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRA-J2-Umc" customClass="SoftButton" customModule="SoftButton">
@@ -790,17 +728,11 @@
                         <outlet property="bottomView" destination="Aha-5w-a0f" id="rff-uh-mjr"/>
                         <outlet property="cropBtn" destination="7bA-1r-NWs" id="Gar-w7-TPO"/>
                         <outlet property="favBtn" destination="dVq-rs-bsV" id="wI0-GK-8f5"/>
-                        <outlet property="filter1" destination="dkP-tX-bAd" id="DqY-df-Lcb"/>
-                        <outlet property="filter2" destination="qcW-N9-ouM" id="oGA-sx-Zbq"/>
-                        <outlet property="filter3" destination="fWS-xT-3Ob" id="TlD-kW-4fa"/>
-                        <outlet property="filter4" destination="rN0-R7-HBe" id="XPm-U8-sYw"/>
-                        <outlet property="filter5" destination="aZF-ID-xTI" id="02f-px-Z9k"/>
-                        <outlet property="filter6" destination="7hv-yg-Rjh" id="pIR-xz-3hS"/>
                         <outlet property="homeBtn" destination="VSL-dV-9Y2" id="7tF-kb-0yZ"/>
                         <outlet property="imgView" destination="3Ef-pD-ICw" id="dUt-EZ-zij"/>
+                        <outlet property="layoutStackView" destination="TXu-za-A5a" id="USJ-tj-rsl"/>
                         <outlet property="saveBtn" destination="dbR-CD-wF0" id="ru2-CF-2qY"/>
                         <outlet property="sliderView" destination="ro2-q1-rJW" id="CZp-Js-OZ0"/>
-                        <outlet property="stackView" destination="m4N-ie-gDL" id="0G9-bY-U2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGf-vI-Adp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1092,12 +1024,6 @@
         <image name="Search" width="14" height="14"/>
         <image name="Welcome" width="405.33334350585938" height="422.33334350585938"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
-        <image name="filter1" width="19" height="19.333333969116211"/>
-        <image name="filter2" width="20.333333969116211" height="20.333333969116211"/>
-        <image name="filter3" width="20.333333969116211" height="20.333333969116211"/>
-        <image name="filter4" width="20.333333969116211" height="20.333333969116211"/>
-        <image name="filter5" width="20" height="20.333333969116211"/>
-        <image name="filter6" width="20.333333969116211" height="20.333333969116211"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="PrimaryColor">
             <color red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1115,13 +1041,13 @@
             <color red="0.62745098039215685" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

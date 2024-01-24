@@ -16,14 +16,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afd-Mp-lKX">
                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FormatRotate" translatesAutoresizingMaskIntoConstraints="NO" id="43H-5K-EZ8">
-                            <rect key="frame" x="18" y="18" width="24" height="24"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow 1" translatesAutoresizingMaskIntoConstraints="NO" id="43H-5K-EZ8">
+                            <rect key="frame" x="22.5" y="22.5" width="15" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="43H-5K-EZ8" secondAttribute="height" multiplier="1:1" id="i9m-ML-fzW"/>
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="43H-5K-EZ8" firstAttribute="centerY" secondItem="afd-Mp-lKX" secondAttribute="centerY" id="cLp-yB-4Rk"/>
                         <constraint firstItem="43H-5K-EZ8" firstAttribute="centerX" secondItem="afd-Mp-lKX" secondAttribute="centerX" id="jkL-uZ-hSU"/>
@@ -60,6 +60,6 @@
         </view>
     </objects>
     <resources>
-        <image name="FormatRotate" width="24" height="24"/>
+        <image name="arrow 1" width="15" height="15"/>
     </resources>
 </document>

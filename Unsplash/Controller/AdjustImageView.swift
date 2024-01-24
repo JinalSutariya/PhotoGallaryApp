@@ -35,31 +35,31 @@ class AdjustImageView : UIView {
     }
     
     func setLayoutView() {
-        self.iconImage.image = UIImage(named : "\(getEffecString(name: effecString))")?.tintedImage()
+        self.iconImage.image = UIImage(named : "\(getEffecString(name: effecString))")
         self.setDefaultView()
     }
     
     func getEffecString(name: Shades) -> String {
         if name == .Brightness{
-            return "Brightness"
+            return "filter1"
         }
         if name == .Saturation{
-            return "Saturation"
+            return "filter2"
         }
         if name == .Contrast{
-            return "Contrast"
+            return "filter3"
         }
         
         if name == .Warmth{
-            return "Warmth"
+            return "filter4"
         }
         
         if name == .Vibrance{
-            return "Vibrance"
+            return "filter5"
         }
        
         if name == .Fade{
-            return "Fade"
+            return "filter6"
         }
         return ""
     }
