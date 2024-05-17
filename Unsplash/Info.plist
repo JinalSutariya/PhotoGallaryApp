@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>We need your permission to save photos to the library</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>We need access to your photos to set them as wallpaper.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need your permission to save photos to the library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photos to set them as wallpaper.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-ThinItalic.ttf</string>
