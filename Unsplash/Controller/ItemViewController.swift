@@ -17,8 +17,8 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var totalPic = 0
     var pageNumber : Int = 0
     var isFetchingData: Bool = false
-
-   
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +102,6 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = images[indexPath.row]
-        
         showImageDetailViewController(image: selectedImage)
     }
     func showImageDetailViewController(image: ItemListDatum) {

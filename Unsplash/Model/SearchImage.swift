@@ -4,10 +4,9 @@
 //
 //  Created by CubezyTech on 08/12/23.
 //
-
 import Foundation
 
-// MARK: - SearchImage
+// MARK: - SearchImages
 struct SearchImage: Codable {
     let total, totalPages: Int
     let results: [Resulttt]
@@ -22,6 +21,7 @@ struct SearchImage: Codable {
 // MARK: - Result
 struct Resulttt: Codable {
     let id, slug: String
+    let alternativeSlugs: AlternativeSlugs
     let createdAt, updatedAt: Date
     let promotedAt: Date?
     let width, height: Int
@@ -34,13 +34,15 @@ struct Resulttt: Codable {
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [JSONAnyyy]
-    let sponsorship: JSONNullll?
+    let sponsorship: JSONNull?
     let topicSubmissions: ResultTopicSubmissions
+    let assetType: AssetType
     let user: Userrr
     let tags: [Taggg]
 
     enum CodingKeys: String, CodingKey {
         case id, slug
+        case alternativeSlugs = "alternative_slugs"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case promotedAt = "promoted_at"
@@ -53,8 +55,19 @@ struct Resulttt: Codable {
         case currentUserCollections = "current_user_collections"
         case sponsorship
         case topicSubmissions = "topic_submissions"
+        case assetType = "asset_type"
         case user, tags
     }
+}
+
+// MARK: - AlternativeSlugs
+struct AlternativeSlugs: Codable {
+    let en, es, ja, fr: String
+    let it, ko, de, pt: String
+}
+
+enum AssetType: String, Codable {
+    case photo = "photo"
 }
 
 // MARK: - Breadcrumb
@@ -82,7 +95,7 @@ struct ResultLinksss: Codable {
 
 // MARK: - Tag
 struct Taggg: Codable {
-    let type: TypeEnum
+    let type: TypeEnummm
     let title: String
     let source: Source?
 }
@@ -90,8 +103,9 @@ struct Taggg: Codable {
 // MARK: - Source
 struct Sourceee: Codable {
     let ancestry: Ancestry
-    let title, subtitle, description, metaTitle: String
-    let metaDescription: String
+    let title: Title
+    let subtitle: Subtitle
+    let description, metaTitle, metaDescription: String
     let coverPhoto: CoverPhoto
 
     enum CodingKeys: String, CodingKey {
@@ -120,26 +134,31 @@ struct Categoryyy: Codable {
 
 // MARK: - CoverPhoto
 struct CoverPhoto: Codable {
-    let id, slug: String
+    let id: ID
+    let slug: Slug
+    let alternativeSlugs: AlternativeSlugs
     let createdAt, updatedAt: Date
     let promotedAt: Date?
     let width, height: Int
-    let color, blurHash: String
+    let color: Color
+    let blurHash: BlurHash
     let description: String?
-    let altDescription: String
+    let altDescription: AltDescription
     let breadcrumbs: [Breadcrumbbb]
     let urls: Urlsss
     let links: ResultLinksss
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [JSONAnyyy]
-    let sponsorship: JSONNullll?
+    let sponsorship: JSONNull?
     let topicSubmissions: CoverPhotoTopicSubmissions
-    let premium, plus: Bool
+    let assetType: AssetType
+    let premium, plus: Bool?
     let user: Userrr
 
     enum CodingKeys: String, CodingKey {
         case id, slug
+        case alternativeSlugs = "alternative_slugs"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case promotedAt = "promoted_at"
@@ -152,36 +171,71 @@ struct CoverPhoto: Codable {
         case currentUserCollections = "current_user_collections"
         case sponsorship
         case topicSubmissions = "topic_submissions"
+        case assetType = "asset_type"
         case premium, plus, user
     }
 }
 
+enum AltDescription: String, Codable {
+    case aMountainWithAPinkSkyAboveTheClouds = "a mountain with a pink sky above the clouds"
+    case aRedWallWithASignThatSaysMexicoInnamor = "a red wall with a sign that says mexico innamor"
+    case redTextile = "red textile"
+    case turnedOffBlackTelevision = "turned off black television"
+    case whiteCar = "white car"
+}
+
+enum BlurHash: String, Codable {
+    case l95Y4I9MwNWAjJA8HxvIA = "L95Y4=I9Mw%NWAj?j]a}8^%hxvIA"
+    case l9BmxO1O1JlCwxWpWpN5NSU = "L9Bmx_o1o1Jl|cwxWpWpN]$5N]sU"
+    case lcEKRsAzoL0JuoLjZwfWqoLa = "LcE^KRs:azoL|0juoLjZwfWqoLa|"
+    case llLF2WBaxNfhfkjIWWBof = "LlLf,=%2WBax}nfhfkj[^iW.WBof"
+    case ltFgBzsIWVNazS3J0WVofj = "LTFgBzs.I;WV$NazS3j[0~WVofj["
+}
+
+enum Color: String, Codable {
+    case a64040 = "#a64040"
+    case f3C0C0 = "#f3c0c0"
+    case the262640 = "#262640"
+    case the400C0C = "#400c0c"
+    case the8C4026 = "#8c4026"
+}
+
+enum ID: String, Codable {
+    case hyBXy5PHQR8 = "HyBXy5PHQR8"
+    case m3MLnR90UM = "m3m-lnR90uM"
+    case oHWCOXSYdsg = "oHWCOXSYdsg"
+    case uBhpOIHnazM = "UBhpOIHnazM"
+    case vEkISVDVISs = "VEkIsvDviSs"
+}
+
+enum Slug: String, Codable {
+    case aMountainWithAPinkSkyAboveTheCloudsVEkISVDVISs = "a-mountain-with-a-pink-sky-above-the-clouds-VEkIsvDviSs"
+    case aRedWallWithASignThatSaysMexicoInnamorOHWCOXSYdsg = "a-red-wall-with-a-sign-that-says-mexico-innamor-oHWCOXSYdsg"
+    case redTextileHyBXy5PHQR8 = "red-textile-HyBXy5PHQR8"
+    case turnedOffBlackTelevisionUBhpOIHnazM = "turned-off-black-television-UBhpOIHnazM"
+    case whiteCarM3MLnR90UM = "white-car-m3m-lnR90uM"
+}
+
 // MARK: - CoverPhotoTopicSubmissions
 struct CoverPhotoTopicSubmissions: Codable {
-    let interiors, animals, currentEvents, wallpapers: CurrentEventsss?
-    let people, spirituality, nature, texturesPatterns: CurrentEventsss?
+    let colorOfWater, texturesPatterns, nature, wallpapers: Wallpapersss?
 
     enum CodingKeys: String, CodingKey {
-        case interiors, animals
-        case currentEvents = "current-events"
-        case wallpapers, people, spirituality, nature
+        case colorOfWater = "color-of-water"
         case texturesPatterns = "textures-patterns"
+        case nature, wallpapers
     }
 }
 
-// MARK: - CurrentEvents
-struct CurrentEventsss: Codable {
-    let status: Status
-    let approvedOn: Date
+// MARK: - Wallpapers
+struct Wallpapersss: Codable {
+    let status: String
+    let approvedOn: Date?
 
     enum CodingKeys: String, CodingKey {
         case status
         case approvedOn = "approved_on"
     }
-}
-
-enum Statusss: String, Codable {
-    case approved = "approved"
 }
 
 // MARK: - Urls
@@ -207,6 +261,7 @@ struct Userrr: Codable {
     let profileImage: ProfileImageee
     let instagramUsername: String?
     let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int
+    let totalIllustrations, totalPromotedIllustrations: Int
     let acceptedTos, forHire: Bool
     let social: Socialll
 
@@ -225,6 +280,8 @@ struct Userrr: Codable {
         case totalLikes = "total_likes"
         case totalPhotos = "total_photos"
         case totalPromotedPhotos = "total_promoted_photos"
+        case totalIllustrations = "total_illustrations"
+        case totalPromotedIllustrations = "total_promoted_illustrations"
         case acceptedTos = "accepted_tos"
         case forHire = "for_hire"
         case social
@@ -252,7 +309,7 @@ struct Socialll: Codable {
     let instagramUsername: String?
     let portfolioURL: String?
     let twitterUsername: String?
-    let paypalEmail: JSONNullll?
+    let paypalEmail: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case instagramUsername = "instagram_username"
@@ -262,20 +319,35 @@ struct Socialll: Codable {
     }
 }
 
+enum Subtitle: String, Codable {
+    case downloadFreeCarImages = "Download Free Car Images"
+    case downloadFreeMexicoImages = "Download Free Mexico Images"
+    case downloadFreeRedWallpapers = "Download Free Red Wallpapers"
+    case downloadFreeVintageBackgroundImages = "Download Free Vintage Background Images"
+    case downloadFreeWallpapers = "Download Free Wallpapers"
+}
+
+enum Title: String, Codable {
+    case carImagesPictures = "Car Images & Pictures"
+    case hdRedWallpapers = "HD Red Wallpapers"
+    case hdWallpapers = "HD Wallpapers"
+    case mexicoPicturesImages = "Mexico Pictures & Images"
+    case vintageBackgrounds = "Vintage Backgrounds"
+}
+
 // MARK: - ResultTopicSubmissions
 struct ResultTopicSubmissions: Codable {
-    let nature, wallpapers, currentEvents: CurrentEventsss?
-    let travel: Travel?
+    let wallpapers: Wallpapersss?
+    let architectureInterior: ArchitectureInteriorr?
 
     enum CodingKeys: String, CodingKey {
-        case nature, wallpapers
-        case currentEvents = "current-events"
-        case travel
+        case wallpapers
+        case architectureInterior = "architecture-interior"
     }
 }
 
-// MARK: - Travel
-struct Travel: Codable {
+// MARK: - ArchitectureInterior
+struct ArchitectureInteriorr: Codable {
     let status: String
 }
 

@@ -10,12 +10,12 @@ protocol DataLoadDelegate: AnyObject {
     func loadDataForFavouritePageView()
 }
 class FavouritteVC: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     var favoriteImages: [UIImage] = []
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,39 +23,40 @@ class FavouritteVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView.dataSource = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout();
         loadFavoriteImages()
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           loadFavoriteImages()
-       }
+        super.viewWillAppear(animated)
+        loadFavoriteImages()
+    }
     func loadFavoriteImages() {
-            print("loadFavoriteImages called")
-
-            let imageDataArray = InsertDatabaseHelper.shared.getAllImages()
-            favoriteImages.removeAll()
-
-            for imageData in imageDataArray {
-                if let image = UIImage(data: imageData) {
-                    favoriteImages.append(image)
-                }
-            }
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        print("loadFavoriteImages called")
+        
+        let imageDataArray = InsertDatabaseHelper.shared.getAllImages()
+        favoriteImages.removeAll()
+        
+        for imageData in imageDataArray {
+            if let image = UIImage(data: imageData) {
+                favoriteImages.append(image)
+                favoriteImages.reverse()
             }
         }
-
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteImages.count
-       }
-
-       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FavouriteCollectionViewCell
-           cell.imgView.image = favoriteImages[indexPath.item]
-
-           return cell
-       }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FavouriteCollectionViewCell
+        cell.imgView.image = favoriteImages[indexPath.item]
+        
+        return cell
+    }
     
     let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
     let numberOfItemsPerColumn: CGFloat = 3

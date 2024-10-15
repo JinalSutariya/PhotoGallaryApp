@@ -56,6 +56,7 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDele
         
         searchPhotos.shared.fetchImages(page: pageNumber, query: query) { [weak self] fetchedImages in
             guard let self = self, let fetchedImages = fetchedImages else {
+                print(fetchedImages)
                 self?.isFetchingData = false
                 return
             }

@@ -68,7 +68,7 @@ class searchPhotos {
                 decoder.dateDecodingStrategy = .iso8601
                 let collectionList = try decoder.decode(SearchImage.self, from: data)
                 completion(collectionList.results)
-                //   print(collectionList)
+                  // print("*****************",collectionList)
             } catch {
                 print("Error decoding JSON: \(error)")
                 completion(nil)
